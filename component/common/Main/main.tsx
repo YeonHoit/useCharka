@@ -54,6 +54,15 @@ export default function Main() {
       buttonColorScheme: "facebook",
       href: "/alert",
     },
+    {
+      imageUrl:
+        "https://img.paperform.co/fetch/f_jpg,w_1800/https://s3.amazonaws.com/paperform-blog/2022/10/Embed-Your-Forms-Opt-2-@2x-2.png",
+      fallbackSrc: "https://via.placeholder.com/150",
+      imageAlt: "none Image alt text",
+      title: "form",
+      buttonColorScheme: "facebook",
+      href: "/form",
+    },
   ];
   const propertys2 = [
     {
