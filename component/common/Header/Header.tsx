@@ -22,7 +22,7 @@ import {
   DrawerContent,
   DrawerCloseButton,
 } from "@chakra-ui/react";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 export default function Header() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -70,7 +70,12 @@ export default function Header() {
           <DrawerCloseButton />
           <DrawerHeader>Chakra Test</DrawerHeader>
           <DrawerBody display={"flex"} gap={5} flexDirection={"column"}>
+            <FormLabel htmlFor="userNm" display={"none"}>
+              이름을 입력해주세요.
+            </FormLabel>
             <Input
+              id="userNm"
+              title="이름 입력"
               p={3}
               fontSize={18}
               placeholder="이름을 입력해주세요."
@@ -79,6 +84,7 @@ export default function Header() {
               }}
               value={text}
             />
+
             <Box fontSize={18} mt={6}>
               <Highlight
                 query={text}
@@ -94,6 +100,7 @@ export default function Header() {
               </FormLabel>
               <Select
                 id="mood"
+                title="기분을 선택해주세요."
                 defaultValue="good"
                 onChange={(e) => {
                   setMood(e.target.value);
