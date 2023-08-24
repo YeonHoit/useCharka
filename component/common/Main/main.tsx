@@ -36,6 +36,15 @@ export default function Main() {
       buttonColorScheme: "facebook",
       href: "/accordion",
     },
+    {
+      imageUrl:
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAS8AAACmCAMAAAC8yPlOAAAAV1BMVEX////p7/X09/q7u7vq6urPz8/x8fHk5OTt7e3AwMDExMTHx8fW1tbKysqioqIcHBwyMjIpKSl5eXmzs7Pb29uoqKj29vZKSkp/f38XFxciIiKEhIS1tbWtHqegAAACuklEQVR4nO3Za3OaQABGYdMgIqK2UUna+v9/Zy+RlersugeMo805n3lH9mHUXCZPRpo8fbH8/nhNLDe9WHqx9GLpxdKLpRdLL5ZeLL1YerH0YunF0oulF0svll4svVh6sfRi6cXSi6UXSy9Wrtd0NR/eZjEbUTNmTNbVFb12GddEK7Zj1rMxY7LOuTTX6zn/Zc/Ti6UX6xN71atj09wbCV7T3rrOXYdj7HrrAq+vcyn1mjdF13KA1zKsm3nuOhxjNevG1eZxvKrungd5hfUQr4Bd7fWK9j95lctEwTPqVVbx2rNjnHi1iXGJEMCl47zK13Wqt8Mo5tXUiRbdj9sRr3KRWodndVde8/XXVN8PjzniVdaLRHVzeox/vbbp9Zn25T7ea7v+lujH6+E9FfFqF6kj193tR7yK5LhuT9eXu8HnV/32Eu9ndwOx92O5beKFu499fs0S46Y6W1/O78fJHXh132nlIK+wHuQVvv4ex2u337y33w3w6q0HeG269g/z+1BZHGuTi17Bq+2ty+SkVzhGMeS1/fvEh631Ymu92Pp+vKbliJoxY7LOeao38WqnD1HO/3Ru4vUg5ZxRr2N6sfRi6cXSi6UXSy+WXiy9WHqx9GLpxdKLpRdLL5ZeLL1YerH0YunF0oulF0svll4svVh6sfRi6cXSi6UXSy+WXiy9WHqx9GLpxdKLpRdLL5ZeLL1YerH0YunF0oulF0svll4svVh6sfRi6cXSi6UXSy+WXiy9WHqx9GLpxdKLpRdLL5ZeLL1YerH0YunF0oulF0svll4svVh6sfRi6cXSi6UXSy+WXiy9WHqx9GLpxdKLpRdLL5ZeLL1YV/X6DF3Ry97Ti6UXSy+WXiy9WHqx9GLpxdKLpRdLL5ZeLL1YerH0YunF0oulF0svll4svVh6sfRi/fWy/H57GekXNZNIHn5Be0wAAAAASUVORK5CYII=",
+      fallbackSrc: "https://via.placeholder.com/150",
+      imageAlt: "none Image alt text",
+      title: "tabs",
+      buttonColorScheme: "facebook",
+      href: "/tabs",
+    },
   ];
   const propertys2 = [
     {
