@@ -14,6 +14,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+import AlertDialogComponent from "./alertDialog";
 
 export default function AlertComponent() {
   /**
@@ -43,7 +44,7 @@ export default function AlertComponent() {
 
   return (
     <Box p={6} sx={alertSx}>
-      {/* 1. <Alert /> 컴포넌트 */}
+      {/* <Alert /> 컴포넌트 */}
       <Alert
         status="success"
         variant="solid"
@@ -63,9 +64,8 @@ export default function AlertComponent() {
           메인 페이지로 눈치껏 알아서 이동해주세요.
         </AlertDescription>
       </Alert>
-
       {/* Stack: 스택은 요소를 그룹화하고 요소 사이에 공백을 적용하는 데 사용되는 레이아웃 구성 요소 */}
-      <Stack spacing={3}>
+      <Stack spacing={3} mb={10}>
         <Alert status="error">
           <AlertIcon />
           There was an error processing your request
@@ -86,6 +86,9 @@ export default function AlertComponent() {
           Chakra is going live on August 30th. Get ready!
         </Alert>
       </Stack>
+
+      {/* Alert Dialog */}
+      <AlertDialogComponent />
     </Box>
   );
 }
