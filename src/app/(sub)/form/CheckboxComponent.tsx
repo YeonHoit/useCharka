@@ -59,6 +59,7 @@ export default function CheckboxComponent() {
       <Checkbox
         size="md"
         mb={2}
+        aria-label="전체 선택"
         borderColor={colorMode === "light" ? "gray.300" : "whiteAlpha.400"}
         isChecked={allChecked}
         isIndeterminate={isIndeterminate}
@@ -69,6 +70,16 @@ export default function CheckboxComponent() {
             })
           );
         }}
+        // enter키 입력 시, boolean값 반전
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            setCheckedItems(
+              checkedItems.map((_) => {
+                return !allChecked;
+              })
+            );
+          }
+        }}
       >
         전체 선택
       </Checkbox>
@@ -78,6 +89,7 @@ export default function CheckboxComponent() {
             <Checkbox
               key={idx}
               size="md"
+              aria-label={`${item.text} 선택`}
               isChecked={checkedItems[idx]}
               onChange={(e) => {
                 const newCheckedList = checkedItems.map((item, idx2) => {
@@ -89,6 +101,20 @@ export default function CheckboxComponent() {
                 });
 
                 setCheckedItems(newCheckedList);
+              }}
+              // enter키 입력 시, boolean값 반전
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  const newCheckedList = checkedItems.map((item, idx2) => {
+                    if (idx === idx2) {
+                      return !item;
+                    } else {
+                      return item;
+                    }
+                  });
+
+                  setCheckedItems(newCheckedList);
+                }
               }}
               borderColor={
                 colorMode === "light" ? "gray.300" : "whiteAlpha.400"
