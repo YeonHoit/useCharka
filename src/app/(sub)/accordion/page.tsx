@@ -1,3 +1,5 @@
-export default function Home() {
-  return <>아코디언 페이지</>;
+import AccordIconComponent from "./accordIconComponent";
+
+export default function AccordIconComponentPage() {
+  return <AccordIconComponent />;
 }
