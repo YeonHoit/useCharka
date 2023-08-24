@@ -1,12 +1,25 @@
 "use client";
 import { ChevronRightIcon } from "@chakra-ui/icons";
-import { Box, Image, Grid, GridItem, Button, useToast } from "@chakra-ui/react";
-import Link from "next/link";
+import {
+  Box,
+  Image,
+  Grid,
+  GridItem,
+  Button,
+  useToast,
+  useColorMode,
+} from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Main() {
   const router = useRouter();
+
+  /**
+   * DarkMode / LightMode
+   */
+
+  const { colorMode, toggleColorMode } = useColorMode();
 
   /**
    * toast 관련 variable
@@ -43,14 +56,25 @@ export default function Main() {
     "2xl": "repeat(6,1fr)", // "96em": 1536px
   };
 
+  const gridBoxSx = {
+    bg: colorMode === "dark" ? "#001369" : "#fffffff",
+    color: colorMode === "dark" ? "#ffffff" : "#000000",
+    gap: 2,
+  };
+
   // 버튼 스타일 묶음
   const buttonCommonSx = {
     w: "100%",
     mt: "4",
+    bg: colorMode === "dark" ? "#000000" : "#fffffff",
+    color: colorMode === "dark" ? "#ffffff" : "#000000",
     textAlign: "center",
     fontWeight: "medium",
     transition: "all 0.5s cubic-bezier(.08,.52,.52,1)",
-    _hover: { bg: "#272727", color: "#ffffff" },
+    _hover:
+      colorMode === "dark"
+        ? { color: "#272727", bg: "#ffffff" }
+        : { bg: "#272727", color: "#ffffff" },
     _focus: { bg: "#272727", color: "#ffffff" },
     _active: {
       bg: "#599cff",
@@ -67,8 +91,9 @@ export default function Main() {
       filter: "blur(0)",
     },
   };
+
   return (
-    <Grid templateColumns={{ ...gridBreakpoints }} gap={2} m={10}>
+    <Grid templateColumns={{ ...gridBreakpoints }} sx={gridBoxSx}>
       {propertys.map((property, idx) => {
         return (
           <GridItem
@@ -78,9 +103,14 @@ export default function Main() {
             display={"flex"}
             justifyContent={"center"}
             alignItems={"center"}
-            mb={8}
+            my={8}
           >
-            <Box boxShadow="md" p={6} rounded={"md"}>
+            <Box
+              boxShadow="md"
+              p={6}
+              rounded={"md"}
+              bg={colorMode === "light" ? "" : "#ffffff"}
+            >
               <Image
                 src={property.imageUrl}
                 alt={property.imageAlt}

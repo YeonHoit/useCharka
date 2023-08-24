@@ -2,10 +2,11 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Providers } from "./providers";
-import { extendTheme } from "@chakra-ui/react";
 import Header from "../../component/common/Header/Header";
 import Footer from "../../component/common/Footer/Footer";
 import "semantic-ui-css/semantic.min.css";
+import { Box, useColorMode } from "@chakra-ui/react";
+import { useEffect } from "react";
 import Recoil from "../../component/Recoil";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -24,9 +25,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Recoil>
-          <Header />
-          <Providers>{children}</Providers>
-          <Footer />
+          <Providers>
+            <Header />
+            {children}
+            <Footer />
+          </Providers>
         </Recoil>
       </body>
     </html>
