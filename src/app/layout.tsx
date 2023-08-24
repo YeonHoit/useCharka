@@ -5,8 +5,6 @@ import { Providers } from "./providers";
 import Header from "../../component/common/Header/Header";
 import Footer from "../../component/common/Footer/Footer";
 import "semantic-ui-css/semantic.min.css";
-import { Box, useColorMode } from "@chakra-ui/react";
-import { useEffect } from "react";
 import Recoil from "../../component/Recoil";
 
 const inter = Inter({ subsets: ["latin"] });

@@ -18,7 +18,6 @@ export default function Main() {
   /**
    * DarkMode / LightMode
    */
-
   const { colorMode, toggleColorMode } = useColorMode();
 
   /**
@@ -73,9 +72,9 @@ export default function Main() {
     transition: "all 0.5s cubic-bezier(.08,.52,.52,1)",
     _hover:
       colorMode === "dark"
-        ? { color: "#272727", bg: "#ffffff" }
-        : { bg: "#272727", color: "#ffffff" },
-    _focus: { bg: "#272727", color: "#ffffff" },
+        ? { color: "#001369", bg: "#ffffff" }
+        : { bg: "#001369", color: "#ffffff" },
+    _focus: { bg: "#001369", color: "#ffffff" },
     _active: {
       bg: "#599cff",
       transform: "scale(0.95)",
