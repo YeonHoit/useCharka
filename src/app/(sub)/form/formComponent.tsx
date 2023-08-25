@@ -14,6 +14,7 @@ import {
 import { useEffect } from "react";
 import CheckboxComponent from "./CheckboxComponent";
 import RadioComponent from "./RadioComponent";
+import InputComponent from "./InputComponent";
 
 export default function FormComponent() {
   /**
@@ -25,6 +26,8 @@ export default function FormComponent() {
     <Box p={6}>
       <CheckboxComponent />
       <RadioComponent />
+
+      <InputComponent />
     </Box>
   );
 }
