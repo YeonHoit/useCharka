@@ -44,7 +44,7 @@ export default function AlertDialogComponent() {
     _hover:
       colorMode === "dark"
         ? { color: "white", bg: "gray.400", borderColor: "white" }
-        : { bg: "blackAlpha.800Alpha.800", color: "#ffffff" },
+        : { bg: "blackAlpha.800", color: "#ffffff" },
     _focus:
       colorMode === "dark"
         ? { bg: "blackAlpha.400", color: "white" }
@@ -52,7 +52,7 @@ export default function AlertDialogComponent() {
     _active:
       colorMode === "dark"
         ? {
-            bg: "blackAlpha.800Alpha.800",
+            bg: "blackAlpha.800",
             transform: "scale(0.95)",
             borderColor: "#bec3c9",
           }
