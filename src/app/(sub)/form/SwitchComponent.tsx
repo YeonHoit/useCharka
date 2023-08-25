@@ -51,6 +51,9 @@ export default function SwitchComponent() {
           id="toggleEmail"
           size="md"
           // colorScheme="teal"
+          aria-label={`이메일 공개여부 스위치: ${
+            isOpen ? "선택됨" : "선택안됨"
+          }`}
           colorScheme="purple"
           isChecked={isOpen}
           onChange={() => setIsOpen((prev) => !prev)}
