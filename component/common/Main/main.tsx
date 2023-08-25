@@ -26,6 +26,7 @@ export default function Main() {
   const toast = useToast();
   const imgToastRef = useRef<any>(null);
 
+  // 이상범
   const propertys = [
     {
       imageUrl:
@@ -64,6 +65,7 @@ export default function Main() {
       href: "/form",
     },
   ];
+  // 손예섬
   const propertys2 = [
     {
       imageUrl:
@@ -91,6 +93,26 @@ export default function Main() {
       title: "custom test",
       buttonColorScheme: "facebook",
       href: "/customTest",
+    },
+  ];
+  // 서연호
+  const propertys3 = [
+    {
+      imageUrl:
+        "https://i1.sndcdn.com/avatars-dvJGJUPAuO4qU7Aa-GjA6wA-t500x500.jpg",
+      fallbackSrc: "https://via.placeholder.com/150",
+      imageAlt: "none Image alt text",
+      title: "select",
+      buttonColorScheme: "facebook",
+      href: "/select",
+    },
+    {
+      imageUrl: "https://t1.daumcdn.net/cfile/tistory/251E313E56943F821F",
+      fallbackSrc: "https://via.placeholder.com/150",
+      imageAlt: "none Image alt text",
+      title: "Custom Radio",
+      buttonColorScheme: "facebook",
+      href: "/customradio",
     },
   ];
   /**
@@ -225,6 +247,81 @@ export default function Main() {
 
       {/* here */}
       {propertys2.map((property, idx) => {
+        return (
+          <GridItem
+            key={idx}
+            w="100%"
+            h="auto"
+            display={"flex"}
+            justifyContent={"center"}
+            alignItems={"center"}
+            my={8}
+          >
+            <Box
+              boxShadow="md"
+              p={6}
+              rounded={"md"}
+              bg={colorMode === "light" ? "" : "#ffffff"}
+            >
+              <Image
+                src={property.imageUrl}
+                alt={property.imageAlt}
+                fallbackSrc={property.fallbackSrc}
+                boxSize={"150px"}
+                borderRadius="full"
+                sx={imageCommonSx}
+                onMouseEnter={() => {
+                  imgToastRef.current = toast({
+                    title: `이미지: ${property.title}`,
+                    description: `${property.title} Charka Component 에 대한 Grid Item이며, 아래 버튼을 통하여 ${property.title}을 사용한 실습 페이지로 이동할 수 있습니다.`,
+                    status: "success",
+                    duration: 9000,
+                    isClosable: false,
+                  });
+                }}
+                onMouseLeave={() => {
+                  if (imgToastRef.current) {
+                    toast.close(imgToastRef.current);
+                  }
+                }}
+              />
+              <Button
+                // w="100%"
+                // mt={4}
+                // textAlign={"center"}
+                // fontWeight={"medium"}
+                // transition="all 0.5s cubic-bezier(.08,.52,.52,1)"
+                // _hover={{ bg: "#272727", color: "#ffffff" }}
+                // _focus={{ bg: "#272727", color: "#ffffff" }}
+                // _active={{
+                //   bg: "#599cff",
+                //   transform: "scale(0.95)",
+                //   borderColor: "#bec3c9",
+                // }}
+                sx={buttonCommonSx}
+                variant="outline" // 얘는 왠진 모르지만 sx로 분리가 안되고, 직접 전달해줘야 하는 거 같음
+                aria-label={`${property.title} 페이지 이동하기`}
+                title={`${property.title} 페이지 이동하기`}
+                rightIcon={
+                  <ChevronRightIcon
+                    boxSize={6}
+                    aria-label={`페이지 이동하기 표시용도의 오른쪽 화살표 이미지 아이콘`}
+                    role="img"
+                  />
+                }
+                onClick={() => {
+                  router.push(property.href);
+                  router.refresh();
+                }}
+              >
+                {property.title}
+              </Button>
+            </Box>
+          </GridItem>
+        );
+      })}
+
+      {propertys3.map((property, idx) => {
         return (
           <GridItem
             key={idx}

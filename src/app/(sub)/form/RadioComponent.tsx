@@ -39,7 +39,7 @@ export default function RadioComponent() {
   return (
     <Box p={6}>
       <Text fontSize="2xl" color="teal.700" fontWeight={700}>
-        라디오 버튼 실습
+        라디오 버튼 실습 (라디오는 좌우 키패드로 선택 전환)
       </Text>
 
       <RadioGroup
