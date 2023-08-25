@@ -1,5 +1,6 @@
 "use client";
-
+import { switchAnatomy } from "@chakra-ui/anatomy";
+import { createMultiStyleConfigHelpers } from "@chakra-ui/react";
 import { CacheProvider } from "@chakra-ui/next-js";
 import {
   ChakraProvider,
@@ -10,6 +11,27 @@ import {
 } from "@chakra-ui/react";
 
 export function Providers({ children }: { children: React.ReactNode }) {
+  const { definePartsStyle, defineMultiStyleConfig } =
+    createMultiStyleConfigHelpers(switchAnatomy.keys);
+
+  const baseStyle = definePartsStyle({
+    // define the part you're going to style
+    container: {
+      // ...
+    },
+    thumb: {
+      bg: "red.100",
+    },
+    track: {
+      bg: "gray.300",
+      _checked: {
+        bg: "purple",
+      },
+    },
+  });
+
+  const switchTheme = defineMultiStyleConfig({ baseStyle });
+
   const theme = extendTheme({
     initialColorMode: "dark", // 'dark' | 'light'
     useSystemColorMode: false,
@@ -21,6 +43,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
           },
         },
       },
+      Switch: switchTheme,
     },
   });
 

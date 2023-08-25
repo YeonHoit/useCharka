@@ -83,6 +83,15 @@ export default function Main() {
       buttonColorScheme: "facebook",
       href: "/table",
     },
+    {
+      imageUrl:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvsJwE9jkRL0fo-mwAVie1tweG2OuCWFoNnw&usqp=CAU",
+      fallbackSrc: "https://via.placeholder.com/150",
+      imageAlt: "none Image alt text",
+      title: "custom test",
+      buttonColorScheme: "facebook",
+      href: "/customTest",
+    },
   ];
   /**
    * "em"은 상대적인 단위로, 폰트 크기에 따라 달라집니다.
