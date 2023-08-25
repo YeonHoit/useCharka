@@ -15,7 +15,7 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-
+import { CheckIcon } from "@chakra-ui/icons";
 export default function CheckboxComponent() {
   /**
    * DarkMode / LightMode
@@ -46,9 +46,9 @@ export default function CheckboxComponent() {
   const isIndeterminate = checkedItems.some(Boolean) && !allChecked;
 
   useEffect(() => {
-    console.log("아이템 리스트", checkedItems);
-    console.log("모두 선택되었는가?", allChecked);
-    console.log("부분만 선택되었는가?", isIndeterminate);
+    // console.log("아이템 리스트", checkedItems);
+    // console.log("모두 선택되었는가?", allChecked);
+    // console.log("부분만 선택되었는가?", isIndeterminate);
   }, [checkedItems]);
 
   return (
@@ -88,6 +88,7 @@ export default function CheckboxComponent() {
           return (
             <Checkbox
               key={idx}
+              icon={<CheckIcon role="img" />}
               size="md"
               aria-label={`${item.text} 선택`}
               isChecked={checkedItems[idx]}
