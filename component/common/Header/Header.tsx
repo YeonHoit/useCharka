@@ -23,7 +23,9 @@ import {
   DrawerContent,
   DrawerCloseButton,
 } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
+import { AiFillHome } from "react-icons/ai";
 
 export default function Header() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -34,8 +36,19 @@ export default function Header() {
   const [mood, setMood] = useState("");
   const [text, setText] = useState<string>("");
 
+  const router = useRouter();
+
   return (
     <Box p={5} textAlign={"right"} bg="#00C7AF">
+      <IconButton
+        title="홈으로 이동"
+        mr={3}
+        aria-label="home_icon"
+        icon={<AiFillHome />}
+        onClick={() => {
+          router.push("/");
+        }}
+      ></IconButton>
       <Tooltip borderRadius={5} p={1} label="클릭 시 테마를 전환합니다.">
         <Button
           onClick={toggleColorMode}
