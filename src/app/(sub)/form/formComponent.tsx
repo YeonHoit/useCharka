@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { useEffect } from "react";
 import CheckboxComponent from "./CheckboxComponent";
+import RadioComponent from "./RadioComponent";
 
 export default function FormComponent() {
   /**
@@ -20,10 +21,10 @@ export default function FormComponent() {
    */
   const { colorMode, toggleColorMode } = useColorMode();
 
-  const checkboxProperty = {};
   return (
     <Box p={6}>
       <CheckboxComponent />
+      <RadioComponent />
     </Box>
   );
 }

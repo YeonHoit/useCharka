@@ -29,12 +29,40 @@ export default function AlertDialogComponent() {
     onOpen: onOpen2,
     onClose: onClose2,
   } = useDisclosure();
+  const { colorMode, toggleColorMode } = useColorMode();
+
   const cancelRef = useRef<any>(null);
   const focusRef = useRef<any>(null);
-
+  const btnSx = {
+    w: "100%",
+    mt: "4",
+    py: "6",
+    bg: colorMode === "dark" ? "white" : "blackAlpha.800",
+    color: colorMode === "dark" ? "gray.700" : "white",
+    border: "1px",
+    borderColor: "gray.700",
+    _hover:
+      colorMode === "dark"
+        ? { color: "white", bg: "gray.400", borderColor: "white" }
+        : { bg: "blackAlpha.800Alpha.800", color: "#ffffff" },
+    _focus:
+      colorMode === "dark"
+        ? { bg: "blackAlpha.400", color: "white" }
+        : { bg: "blackAlpha.400", color: "white" },
+    _active:
+      colorMode === "dark"
+        ? {
+            bg: "blackAlpha.800Alpha.800",
+            transform: "scale(0.95)",
+            borderColor: "#bec3c9",
+          }
+        : { bg: "gray.100", transform: "scale(0.95)", borderColor: "#bec3c9" },
+  };
   return (
     <>
-      <Button onClick={onOpen}>Discard</Button>
+      <Button onClick={onOpen} sx={btnSx}>
+        Discard
+      </Button>
 
       {/* 최초 삭제 여부 알림용 <AlertDialog/> */}
       <AlertDialog
