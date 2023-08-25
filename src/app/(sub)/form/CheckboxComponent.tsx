@@ -88,8 +88,17 @@ export default function CheckboxComponent() {
           return (
             <Checkbox
               key={idx}
-              icon={<CheckIcon role="img" />}
-              size="md"
+              icon={
+                <CheckIcon
+                  aria-label={
+                    checkedItems[idx]
+                      ? `체크박스 아이콘: 체크됨`
+                      : `체크박스 아이콘: 체크안됨`
+                  }
+                  role="img"
+                />
+              }
+              size="lg"
               aria-label={`${item.text} 선택`}
               isChecked={checkedItems[idx]}
               onChange={(e) => {
