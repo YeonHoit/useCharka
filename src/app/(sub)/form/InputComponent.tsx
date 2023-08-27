@@ -203,6 +203,7 @@ export default function InputComponent() {
             <InputLeftAddon children="https://" />
             <Input
               id="SiteGo"
+              type="text"
               placeholder="mysite"
               // input box는 따로 focus 색상을 결정할 수 있음
               focusBorderColor="red.600"

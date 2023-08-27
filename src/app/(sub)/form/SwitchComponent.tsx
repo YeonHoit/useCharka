@@ -15,6 +15,7 @@ import {
   Stack,
   Switch,
   Text,
+  VisuallyHidden,
   border,
   useColorMode,
 } from "@chakra-ui/react";
@@ -63,7 +64,9 @@ export default function SwitchComponent() {
               setIsOpen((prev) => !prev);
             }
           }}
-        />
+        >
+          <VisuallyHidden>이메일 공개여부 선택</VisuallyHidden>
+        </Switch>
         <Text sx={textSx}>공개</Text>
       </Stack>
 
