@@ -19,6 +19,7 @@ import {
 import { useEffect, useState } from "react";
 import { CheckIcon } from "@chakra-ui/icons";
 import UseBoolean from "./useBoolean";
+import UseDimensions from "./useDimensions";
 export default function HooksComponent() {
   /**
    * DarkMode / LightMode
@@ -29,13 +30,18 @@ export default function HooksComponent() {
       name: "useBoolean",
       text: "- state 상태저장에서 boolean값과 이를 업데이트 하기 위한 set함수가 있는 객체를 반환한다.",
     },
+    {
+      name: "useDimensions",
+      text: "- Box Model의 element에 대한 참조된 요소의 치수를 측정한다.",
+    },
   ];
 
   const ReturnComponent = (name: string) => {
     switch (name) {
       case "useBoolean":
         return <UseBoolean />;
-
+      case "useDimensions":
+        return <UseDimensions />;
       default:
         return;
     }
