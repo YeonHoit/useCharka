@@ -20,10 +20,10 @@ export function Providers({ children }: { children: React.ReactNode }) {
       // ...
     },
     thumb: {
-      bg: "red.100",
+      bg: "red.400",
     },
     track: {
-      bg: "gray.300",
+      bg: "blue",
       _checked: {
         bg: "purple",
       },
