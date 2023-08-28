@@ -21,6 +21,7 @@ import { CheckIcon } from "@chakra-ui/icons";
 import UseBoolean from "./useBoolean";
 import UseDimensions from "./useDimensions";
 import UseDisclosure from "./useDisclosure";
+import UseMediaQuery from "./useMediaQuery";
 export default function HooksComponent() {
   /**
    * DarkMode / LightMode
@@ -39,6 +40,10 @@ export default function HooksComponent() {
       name: "useDisclosure",
       text: "- Open/Close 동작을 포함하는 Modal, AlertDialog, Drawer같은 피드백 컴포넌트 요소를 제어할 때 사용한다.",
     },
+    {
+      name: "UseMediaQuery",
+      text: "- 개별/여러 미디어 쿼리가 일치하는지에 대해 감지한다.",
+    },
   ];
 
   const ReturnComponent = (name: string) => {
@@ -49,6 +54,8 @@ export default function HooksComponent() {
         return <UseDimensions />;
       case "useDisclosure":
         return <UseDisclosure />;
+      case "UseMediaQuery":
+        return <UseMediaQuery />;
       default:
         return;
     }
