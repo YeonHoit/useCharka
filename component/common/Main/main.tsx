@@ -73,6 +73,14 @@ export default function Main() {
       buttonColorScheme: "facebook",
       href: "/tags",
     },
+    {
+      imageUrl: "",
+      fallbackSrc: "https://via.placeholder.com/150",
+      imageAlt: "none Image alt text",
+      title: "hooks",
+      buttonColorScheme: "black",
+      href: "/hooks",
+    },
   ];
   // 손예섬
   const propertys2 = [
