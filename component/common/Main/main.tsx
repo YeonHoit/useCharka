@@ -94,6 +94,15 @@ export default function Main() {
       buttonColorScheme: "facebook",
       href: "/table",
     },
+    {
+      imageUrl:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvsJwE9jkRL0fo-mwAVie1tweG2OuCWFoNnw&usqp=CAU",
+      fallbackSrc: "https://via.placeholder.com/150",
+      imageAlt: "none Image alt text",
+      title: "custom test",
+      buttonColorScheme: "facebook",
+      href: "/customTest",
+    },
   ];
   // 서연호
   const propertys3 = [
